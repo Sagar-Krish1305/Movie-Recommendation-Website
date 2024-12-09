@@ -8,8 +8,12 @@ const MovieCard = ({
   movieCast,
   movieDescription,
   movieAvailability,
+  movieYear,
+  movieDirector,
+  movieDuration,
+  movieLanguage,
+  movieReleaseDate,
 }) => {
-
   return (
     <div className="m-5 border-white bg-black rounded-lg shadow-lg border-2 flex flex-col w-96 max-w-xs h-auto text-wrap hover:scale-105 ease-in duration-150 p-5">
       <img
@@ -22,12 +26,30 @@ const MovieCard = ({
         <p className="text-yellow-400 font-bold">{movieRating}</p>
         <p className="text-gray-400 italic">{movieGenre}</p>
         <p className="text-gray-300">
-          <span className="font-bold text-white">Cast:</span> {movieCast}
+          <span className="font-bold text-white">Cast:</span> {movieCast.join(', ')}
         </p>
         <p className="text-gray-300">
           <span className="font-bold text-white">Description:</span>{" "}
           <span className="block text-sm text-gray-300">{movieDescription}</span>
         </p>
+        
+        {/* Additional Movie Information */}
+        <p className="text-gray-300">
+          <span className="font-bold text-white">Year:</span> {movieYear}
+        </p>
+        <p className="text-gray-300">
+          <span className="font-bold text-white">Director:</span> {movieDirector}
+        </p>
+        <p className="text-gray-300">
+          <span className="font-bold text-white">Duration:</span> {movieDuration ? `${movieDuration} minutes` : 'N/A'}
+        </p>
+        <p className="text-gray-300">
+          <span className="font-bold text-white">Language:</span> {movieLanguage || 'N/A'}
+        </p>
+        <p className="text-gray-300">
+          <span className="font-bold text-white">Release Date:</span> {movieReleaseDate || 'N/A'}
+        </p>
+        
         <div className="flex flex-wrap gap-2 mt-3">
           <span className="font-bold text-white">Available On:</span>
           {movieAvailability.map((platform, index) => (
