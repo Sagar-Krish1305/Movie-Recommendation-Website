@@ -11,7 +11,7 @@ const App = () => {
   // Fetch movies based on search query and K value
   const fetchMovies = async () => {
     const response = await fetch(
-      `http://localhost:3000/api/v1/search/${queryText}/${K}`
+      `https://movie-recommendation-website-backend.onrender.com/api/v1/search/${queryText}/${K}`
     );
     const data = await response.json();
     setMovies(data);  // Set movies state with the fetched data

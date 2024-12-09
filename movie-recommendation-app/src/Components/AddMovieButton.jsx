@@ -22,7 +22,7 @@ const AddMovieButton = () => {
 
   const addMovie = async (movieDetails) => {
     try {
-      const response = await fetch("http://localhost:3000/api/v1/add_movie", {
+      const response = await fetch("https://movie-recommendation-website-backend.onrender.com/api/v1/add_movie", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
